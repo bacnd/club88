@@ -1,0 +1,260 @@
+@charset "utf-8";
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: $font-html;
+}
+
+html:not(.lt-ie10) .not-animated {
+    opacity: 0;
+}
+
+body {
+    background-color: $clr-white;
+    font-family: $font-primary;
+    @include fontsize(18);
+    line-height: 1.5;
+    color: $clr-purple-brown;
+    width: 100%;
+    height: 100%;
+    // overflow-x: hidden;
+
+    -ms-word-break: break-all;
+    word-break: break-all;
+
+    /* Non standard for WebKit */
+    word-break: break-word;
+    @include max_768 {
+        &.show-menu {
+            position: fixed;
+            overflow: hidden;
+        }
+    }
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+ul,
+li {
+    list-style: none;
+    padding: 0;
+}
+
+textarea:focus,
+input:focus,
+button:focus,
+select:focus {
+    outline: none;
+}
+select::-ms-expand {
+    display: none; /* hide the default arrow in ie10 and ie11 */
+}
+button {
+    border: none;
+}
+a {
+    opacity: 1;
+    @include transition(all 0.4s ease);
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+// p {
+//     // margin-top: 1rem;
+//     // margin-bottom: 1rem;
+// }
+
+a:hover,
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: $clr-purple-brown;
+}
+
+img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+figure {
+    padding: 0;
+    margin: 0;
+}
+
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+input {
+    height: auto;
+}
+
+:not(output):-moz-ui-invalid {
+    box-shadow: none;
+}
+
+:not(output):-moz-ui-invalid:-moz-focusring {
+    box-shadow: none;
+}
+
+output:-moz-ui-invalid {
+    color: none;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    @include padding-sp;
+}
+
+.max-content {
+    max-width: 1366px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.no-position {
+    position: static;
+}
+
+.img-responsive {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.nopd {
+    padding: 0 !important;
+}
+
+.nomg {
+    margin: 0 !important;
+}
+
+.dl-pc {
+    display: block;
+    @media screen and (max-width: 768px) {
+        display: none !important;
+    }
+}
+
+.dl-sp {
+    display: none !important;
+    @media screen and (max-width: 768px) {
+        display: block !important;
+    }
+}
+
+.box-content figure {
+    overflow: hidden;
+    display: table;
+    width: 100%;
+}
+
+// .box-content figure img {
+//     -webkit-transform: scale(1);
+//     transform: scale(1);
+//     -webkit-transition: 0.3s ease-in-out;
+//     transition: 0.3s ease-in-out;
+// }
+
+// .box-content figure:hover img {
+//     -webkit-transform: scale(1.1);
+//     transform: scale(1.1);
+// }
+
+.clearfix {
+    clear: both;
+    height: 0;
+    &:after,
+    &:before {
+        content: ' ';
+        display: table;
+    }
+}
+
+.bg-white {
+    background: $clr-white !important;
+}
+
+.dl-flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.page-noslider {
+    .bg-topsection {
+        background: url('../images/common/bg-fvpage-sp.png') no-repeat;
+        background-size: contain;
+        width: 100%;
+        @include min_769 {
+            background: url('../images/common/bg-fvpage.png') no-repeat;
+        }
+        .section-ct {
+            padding-top: 16vw;
+            @include min_769 {
+                padding-top: 117px;
+            }
+            .section-tlt {
+                color: $clr-white;
+                margin-bottom: 6vw;
+                @include min_769 {
+                    margin-bottom: 46px;
+                }
+            }
+        }
+    }
+}

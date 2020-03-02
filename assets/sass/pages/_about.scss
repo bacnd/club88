@@ -1,0 +1,132 @@
+#about {
+    &.box-introduction {
+        padding-left: 0;
+        padding-right: 0;
+        .intro-content {
+            position: relative;
+            z-index: 1;
+            margin-top: 8vw;
+            @include min_769 {
+                margin-top: 80px;
+            }
+            p {
+                max-width: 960px;
+                width: 100%;
+                margin: auto;
+                font-size: 16px;
+                @include resizefont(16px, 32px);
+            }
+            .intro-gallery {
+                margin-top: 8vw;
+                @include min_769 {
+                    margin-top: 83px;
+                }
+                width: 100%;
+                margin-bottom: 55px;
+                .ir-gallery {
+                    @include max_768 {
+                        flex-direction: column;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    &__1 {
+                        @include max_768 {
+                            margin-bottom: 12px;
+                            img {
+                                width: 100%;
+                            }
+                        }
+                        @include min_769 {
+                            margin-right: 12px;
+                        }
+                    }
+                    &__2 {
+                        figure {
+                            @include max_768 {
+                                width: calc(50% - 6px);
+                            }
+                            & + figure {
+                                margin-left: 12px;
+                            }
+                        }
+                    }
+                    &:nth-child(even) {
+                        .ir-gallery__1 {
+                            @include max_768 {
+                                margin-top: 12px;
+                            }
+                            @include min_769 {
+                                margin-right: 0;
+                                margin-left: 12px;
+                            }
+                        }
+                    }
+                    & + .ir-gallery {
+                        margin-top: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.box-ft-banner {
+    .ft-banner {
+        @include max_768 {
+            flex-direction: column;
+        }
+        .ift-banner {
+            position: relative;
+            overflow: hidden;
+            flex: 1;
+            figure {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                    -webkit-transition: -webkit-transform 0.35s;
+                    transition: transform 0.35s;
+                    @include transition;
+                    @include transform(scale(1));
+                    width: 100%;
+                }
+
+                figcaption {
+                    position: absolute;
+                    max-width: 90%;
+                    width: 100%;
+                    min-height: 50px;
+                    border-radius: 4px;
+                    background: rgba($color: #000000, $alpha: 0.6);
+                    font-size: 22px;
+                    font-weight: 500;
+                    line-height: 1.45;
+                    letter-spacing: 5.5px;
+                    color: $clr-white;
+                    padding: 10px 5px;
+                    text-align: center;
+                    @include resizefont(20px, 40px);
+                    right: 0;
+                    left: 0;
+                    margin: auto;
+                    @include min_769 {
+                        max-width: 400px;
+                    }
+                }
+                &:hover {
+                    @include min_769 {
+                        img {
+                            @include transform(scale(1.1));
+                        }
+                    }
+                }
+            }
+            a {
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

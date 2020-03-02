@@ -1,0 +1,41 @@
+#gallery {
+    .gallery__content {
+        padding: 15px 15px 0 15px;
+        @media screen and (max-width: 424px) {
+            padding: 10px;
+        }
+        .grid {
+            display: table;
+            width: 100%;
+            &:after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+            .grid-sizer,
+            .grid-item {
+                width: calc(33.333% - 10px);
+                @media screen and (max-width: 424px) {
+                    position: initial !important;
+                    width: 100%;
+                }
+            }
+
+            .grid-item {
+                float: left;
+                margin-bottom: 15px;
+                @include transition;
+                @media screen and (max-width: 424px) {
+                    margin-bottom: 10px;
+                }
+                img {
+                    display: block;
+                    width: 100%;
+                }
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
