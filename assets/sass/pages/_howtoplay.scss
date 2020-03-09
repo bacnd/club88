@@ -1,0 +1,765 @@
+// commons
+$retina2x: "only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)";
+
+$retina3x: "only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3/1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 350dpi), only screen and (min-resolution: 3dppx)";
+
+@mixin retina2x() {
+    @media #{$retina2x} {
+        @content;
+    }
+}
+
+@mixin retina3x() {
+    @media #{$retina3x} {
+        @content;
+    }
+}
+
+.col {
+    position: relative;
+    width: 100%;
+}
+
+.col-1 {
+    @extend .col;
+    @include flexwidth(100% / 1);
+
+}
+
+.col-2 {
+    @extend .col;
+    @include flexwidth(100%);
+
+
+    @include min_992 {
+        @include flexwidth(100% / 2);
+    }
+}
+
+.col-3 {
+    @extend .col;
+    @include flexwidth(100%);
+
+    @include min_992 {
+        @include flexwidth(100% / 3);
+    }
+}
+
+.row {
+    @include dlflex;
+    @include flex-wrap(wrap);
+}
+
+.center-horizontal {
+    left: 50%;
+    @include transform(translateX(-50%));
+    position: absolute;
+}
+
+@mixin tab($selector) {
+    #{$selector} {
+        &:checked {
+            &~.tabs-content {
+                [data-tab="#{$selector}"] {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+// tab
+.tabs {
+    @extend .row;
+
+    input[name="howtoplay"] {
+        display: none;
+
+        &+label {
+            @include flexwidth(50%);
+            text-align: center;
+            background-color: #a1885c;
+            color: #fff;
+            position: relative;
+            cursor: pointer;
+            border: 10px solid transparent;
+            border-left: none;
+            border-right: none;
+            font-weight: bold;
+
+            font-size: (36px / 2);
+            border-width: (10px / 2);
+
+            @include min_769 {
+                font-size: 36px;
+                border-width: 10px;
+            }
+
+            @include min_992 {
+                font-size: 27px;
+                border-width: 10px;
+            }
+
+
+
+            &::before {
+                content: "";
+                border: 1px solid #fff;
+                position: absolute;
+                right: 0;
+                margin-right: -2px;
+                z-index: 2;
+
+                top: (-10px / 2);
+                bottom: (-10px / 2);
+
+                @include min_769 {
+                    top: -10px;
+                    bottom: -10px;
+                }
+
+                @include min_992 {
+                    top: -10px;
+                    bottom: -10px;
+                }
+            }
+
+            &::after {
+                @extend .center-horizontal;
+
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-color: #bdac8d transparent transparent transparent;
+                top: 100%;
+
+                z-index: 3;
+
+                margin-top: (10px / 2);
+                border-width: (10px/2) (10.5px/2) 0 (10.5px/2);
+
+                @include min_769 {
+                    margin-top: 10px;
+                    border-width: 10px 10.5px 0 10.5px;
+                }
+
+                @include min_992 {
+                    margin-top: 10px;
+                    border-width: 10px 10.5px 0 10.5px;
+                }
+            }
+
+        }
+
+        &:checked {
+            &+label {
+                color: #fff282;
+                border-bottom-color: transparentize(#fff, 0.7);
+
+                &::after {
+                    content: "";
+                }
+
+            }
+        }
+    }
+
+    .tabs-content {
+        @include flexwidth(100%);
+
+        margin-top: (40px / 2);
+
+        @include min_769 {
+            margin-top: 40px;
+        }
+
+        @include min_992 {
+            margin-top: 70px;
+        }
+    }
+
+    [data-tab] {
+        display: none;
+    }
+
+    @include tab('#tab1');
+    @include tab('#tab2');
+
+
+}
+
+// Layouts
+/*tab Games*/
+.game-items {
+    @extend .row;
+    margin: -20px;
+}
+
+.game-item {
+    @extend .col-3;
+    padding: 20px;
+}
+
+.game-item-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    color: transparent !important;
+}
+
+.game-item-wrap {
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    &::after {
+        top: 0;
+        background-color: transparent;
+        @include transition();
+    }
+
+    .game-item:hover & {
+        &::after {
+            background-color: rgba(40, 36, 106, 0.85);
+        }
+    }
+
+    &::before {
+        background: url(../images/howtoplay/games/shape-1-copy-11.png) center bottom repeat-x;
+        background-size: contain;
+
+        height: (169px / 2);
+
+        @include min_769 {
+            height: 169px;
+        }
+
+        @include min_992 {
+            height: 81px;
+        }
+
+    }
+}
+
+.game-item-thumbnail {
+    img {
+        width: 100%;
+    }
+}
+
+.game-item-content {
+    @extend .row;
+    @include alignitems(flex-end);
+    position: absolute;
+    overflow: hidden;
+    color: #fff;
+
+    top: (45px / 2);
+    left: (45px / 2);
+    right: (45px / 2);
+    bottom: (45px / 2);
+
+    @include min_769 {
+        top: 45px;
+        left: 45px;
+        right: 45px;
+        bottom: 45px;
+    }
+
+    @include min_992 {
+        top: 30px;
+        left: 30px;
+        right: 30px;
+        bottom: 30px;
+    }
+
+    .game-item:hover & {
+        @include alignitems(flex-start);
+
+        .title {
+            &::before {
+                height: 0;
+            }
+
+            &::after {
+                height: (46px / 2);
+
+                @include min_769 {
+                    height: 46px;
+                }
+
+                @include min_992 {
+                    height: 19px;
+                }
+            }
+        }
+
+        .desc {
+            position: relative;
+            max-height: 1000px;
+        }
+    }
+
+    .title,
+    .desc {
+        @extend .col-1;
+        position: relative;
+        z-index: 99;
+
+
+    }
+
+    .title {
+        text-align: center;
+
+        font-size: (48px / 2);
+
+        @include min_769 {
+            font-size: 48px;
+        }
+
+        @include min_992 {
+            font-size: 22px;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+
+        &::after {
+            background-image: url(../images/howtoplay/games/basics-05-512-copy-down.png);
+            height: 0;
+
+            margin-top: (30px / 2);
+            margin-bottom: (30px / 2);
+
+            @include min_769 {
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+
+            @include min_992 {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+
+        &::before {
+            background-image: url(../images/howtoplay/games/basics-05-512-copy.png);
+
+            margin-bottom: (30px / 2);
+            height: (46px / 2);
+
+            @include min_769 {
+                height: 46px;
+                margin-bottom: 30px;
+            }
+
+            @include min_992 {
+                height: 19px;
+                margin-bottom: 0px;
+            }
+        }
+
+    }
+
+    .desc {
+
+        max-height: 0;
+        overflow: hidden;
+        position: absolute;
+        height: 100%;
+
+        font-size: (32px / 2);
+
+        @include min_769 {
+            font-size: 32px;
+        }
+
+        @include min_992 {
+            font-size: 16px;
+        }
+
+    }
+
+    // MOdal
+    .overlay {
+        @include transition();
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.5);
+        visibility: hidden;
+        opacity: 0;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:target {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    .popup {
+        position: relative;
+        height: 85%;
+        display: flex;
+        align-items: center;
+
+        .close {
+            @include transition();
+            opacity: 0.8;
+            font-weight: bold;
+            text-decoration: none;
+            color: #666;
+            display: block;
+            text-align: right;
+
+            font-size: 24px;
+
+            @include min_769 {
+                font-size: 48px;
+            }
+
+            @include min_992 {
+                font-size: 24px;
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .content {
+            max-height: 100%;
+            overflow: auto;
+            padding: 20px;
+            background: #fff;
+            color: #000;
+            border: 1px solid #666;
+            width: 90%;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+            margin: auto;
+            @include radius(4px);
+
+            img {
+                width: 100%;
+                margin: 15px 0;
+            }
+
+            .section-tlt {
+                color: #000;
+                font-size: (55px / 2);
+
+                @include min_769 {
+                    font-size: 55px;
+                }
+
+                @include min_992 {
+                    font-size: 27px;
+                }
+            }
+        }
+    }
+}
+
+/*tab [How to play]*/
+.howtoplay__content {
+    background-color: #fff;
+
+    font-size: (32px / 2);
+    padding: (50px/2) (20px/2);
+
+    @include min_769 {
+        padding: 50px 20px;
+        font-size: 32px;
+    }
+
+    @include min_992 {
+        font-size: 16px;
+        padding: 50px 100px;
+    }
+}
+
+.howtoplay-item {
+    @extend .row;
+    position: relative;
+
+    margin-top: (87px/2);
+
+    @include min_769 {
+        margin-top: 87px;
+    }
+
+    @include min_992 {
+        margin-top: 0px;
+    }
+
+    &:nth-child(even) {
+        flex-direction: row-reverse;
+
+        &::before {
+
+            @include min_992 {
+                width: 56px;
+                height: 56px;
+                bottom: -(56px / 2);
+            }
+
+        }
+    }
+
+    &:nth-child(odd) {
+        &::before {
+
+            @include min_992 {
+                width: 131px;
+                height: 130px;
+                bottom: -(130px / 2);
+            }
+        }
+    }
+
+
+
+    &::before,
+    &::after {
+        @extend .center-horizontal;
+        content: "";
+        z-index: 0;
+        display: block;
+        background-position: center center;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        bottom: 100%;
+        margin-bottom: -1px;
+
+        width: (172px / 2);
+        height: (87px / 2);
+
+        @include min_769 {
+            width: 172px;
+            height: 87px;
+        }
+
+        @include min_992 {
+            z-index: 3;
+            margin-bottom: 0px;
+        }
+    }
+
+
+    &:nth-child(2) {
+        &::before {
+            background-image: url(../images/howtoplay/howtoplay/2.png);
+
+            @include min-992 {
+                background-image: url(../images/howtoplay/howtoplay/icon-arrow-1.png);
+
+                @include retina2x {
+                    background-image: url(../images/howtoplay/howtoplay/icon-arrow-1@2x.png);
+                }
+
+                @include retina3x {
+                    background-image: url(../images/howtoplay/howtoplay/icon-arrow-1@3x.png);
+                }
+            }
+        }
+    }
+
+    &:nth-child(4) {
+        &::before {
+            background-image: url(../images/howtoplay/howtoplay/4.png);
+
+            @include min-992 {
+                background-image: url(../images/howtoplay/howtoplay/icon-arrow-1.png);
+
+                @include retina2x {
+                    background-image: url(../images/howtoplay/howtoplay/icon-arrow-1@2x.png);
+                }
+
+                @include retina3x {
+                    background-image: url(../images/howtoplay/howtoplay/icon-arrow-1@3x.png);
+                }
+            }
+
+        }
+    }
+
+    &:nth-child(6) {
+        &::before {
+            background-image: url(../images/howtoplay/howtoplay/6.png);
+
+            @include min-992 {
+                background-image: none;
+            }
+
+
+        }
+    }
+
+    &:nth-child(1) {
+        &::before {
+            background-image: url(../images/howtoplay/howtoplay/1.png);
+
+            @include min_992 {
+                background-image: url(../images/howtoplay/howtoplay/icon-1-2.png);
+
+                @include retina2x {
+                    background-image: url(../images/howtoplay/howtoplay/icon-1-2@2x.png);
+                }
+
+                @include retina3x {
+                    background-image: url(../images/howtoplay/howtoplay/icon-1-2@3x.png);
+                }
+            }
+        }
+    }
+
+    &:nth-child(3) {
+        &::before {
+            background-image: url(../images/howtoplay/howtoplay/3.png);
+
+            @include min_992 {
+                background-image: url(../images/howtoplay/howtoplay/icon-3-4.png);
+
+                @include retina2x {
+                    background-image: url(../images/howtoplay/howtoplay/icon-3-4@2x.png);
+                }
+
+                @include retina3x {
+                    background-image: url(../images/howtoplay/howtoplay/icon-3-4@3x.png);
+                }
+            }
+        }
+    }
+
+    &:nth-child(5) {
+        &::before {
+            background-image: url(../images/howtoplay/howtoplay/5.png);
+
+            @include min_992 {
+                background-image: url(../images/howtoplay/howtoplay/icon-5-6.png);
+
+                @include retina2x {
+                    background-image: url(../images/howtoplay/howtoplay/icon-5-6@2x.png);
+                }
+
+                @include retina3x {
+                    background-image: url(../images/howtoplay/howtoplay/icon-5-6@3x.png);
+                }
+            }
+        }
+    }
+}
+
+.howtoplay-item-thumbnail,
+.howtoplay-item-content {
+    @extend .col-2;
+
+}
+
+.howtoplay-item-thumbnail {
+    overflow: hidden;
+
+    img {
+        @extend .center-horizontal;
+        min-width: 100%;
+        position: relative;
+
+        @include min_992 {
+            max-width: none;
+            min-height: 100%;
+        }
+    }
+}
+
+.howtoplay-item-content {
+    color: #2d2a2a;
+
+    padding: (40px/2) 0;
+
+    @include min_769 {
+        padding: 40px 0;
+    }
+
+    @include min_992 {
+        padding: 60px 65px;
+    }
+
+    .howtoplay-item:nth-child(even) & {
+        padding-left: 0;
+    }
+
+    .howtoplay-item:nth-child(odd) & {
+        padding-right: 0;
+    }
+
+    .howtoplay-item:last-child & {
+        padding-bottom: 0;
+    }
+
+    h3 {
+        background: url(../images/howtoplay/howtoplay/shape-5.png) left bottom no-repeat;
+
+        padding-bottom: (10px / 2);
+        margin-bottom: (20px / 2);
+        font-size: (36px / 2);
+
+        @include retina2x {
+            background-image: url(../images/howtoplay/howtoplay/shape-5@2x.png);
+        }
+
+        @include retina3x {
+            background-image: url(../images/howtoplay/howtoplay/shape-5@3x.png);
+        }
+
+        @include min_769 {
+            font-size: 36px;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        @include min_992 {
+            font-size: 27px;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+/*Note*/
+.howtoplay-note {
+    border-top: 1px solid #ccc;
+    padding: (25px / 2) 0;
+    margin-top: (60px / 2);
+
+    @include min_769 {
+        margin-top: 60px;
+        padding: 25px 0;
+    }
+
+    @include min_992 {
+        margin-top: 40px;
+        padding: 25px 0;
+    }
+}
