@@ -198,7 +198,16 @@ $retina3x: "only screen and (-webkit-min-device-pixel-ratio: 3), only screen and
 .game-item {
     @extend .col-3;
     padding: 20px;
+}
 
+.game-item-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    color: transparent !important;
 }
 
 .game-item-wrap {
@@ -219,7 +228,7 @@ $retina3x: "only screen and (-webkit-min-device-pixel-ratio: 3), only screen and
         @include transition();
     }
 
-    &:hover {
+    .game-item:hover & {
         &::after {
             background-color: rgba(40, 36, 106, 0.85);
         }
@@ -240,7 +249,6 @@ $retina3x: "only screen and (-webkit-min-device-pixel-ratio: 3), only screen and
         }
 
     }
-
 }
 
 .game-item-thumbnail {
@@ -253,9 +261,8 @@ $retina3x: "only screen and (-webkit-min-device-pixel-ratio: 3), only screen and
     @extend .row;
     @include alignitems(flex-end);
     position: absolute;
-    color: #fff;
     overflow: hidden;
-
+    color: #fff;
 
     top: (45px / 2);
     left: (45px / 2);
@@ -270,13 +277,13 @@ $retina3x: "only screen and (-webkit-min-device-pixel-ratio: 3), only screen and
     }
 
     @include min_992 {
-        top: 15px;
-        left: 15px;
-        right: 15px;
-        bottom: 15px;
+        top: 30px;
+        left: 30px;
+        right: 30px;
+        bottom: 30px;
     }
 
-    .game-item-wrap:hover & {
+    .game-item:hover & {
         @include alignitems(flex-start);
 
         .title {
@@ -308,6 +315,7 @@ $retina3x: "only screen and (-webkit-min-device-pixel-ratio: 3), only screen and
         @extend .col-1;
         position: relative;
         z-index: 99;
+
 
     }
 
@@ -364,7 +372,7 @@ $retina3x: "only screen and (-webkit-min-device-pixel-ratio: 3), only screen and
 
             @include min_992 {
                 height: 19px;
-                margin-bottom: 10px;
+                margin-bottom: 0px;
             }
         }
 
@@ -387,6 +395,90 @@ $retina3x: "only screen and (-webkit-min-device-pixel-ratio: 3), only screen and
             font-size: 16px;
         }
 
+    }
+
+    // MOdal
+    .overlay {
+        @include transition();
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.5);
+        visibility: hidden;
+        opacity: 0;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:target {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    .popup {
+        position: relative;
+        height: 85%;
+        display: flex;
+        align-items: center;
+
+        .close {
+            @include transition();
+            opacity: 0.8;
+            font-weight: bold;
+            text-decoration: none;
+            color: #666;
+            display: block;
+            text-align: right;
+
+            font-size: 24px;
+
+            @include min_769 {
+                font-size: 48px;
+            }
+
+            @include min_992 {
+                font-size: 24px;
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .content {
+            max-height: 100%;
+            overflow: auto;
+            padding: 20px;
+            background: #fff;
+            color: #000;
+            border: 1px solid #666;
+            width: 90%;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+            margin: auto;
+            @include radius(4px);
+
+            img {
+                width: 100%;
+                margin: 15px 0;
+            }
+
+            .section-tlt {
+                color: #000;
+                font-size: (55px / 2);
+
+                @include min_769 {
+                    font-size: 55px;
+                }
+
+                @include min_992 {
+                    font-size: 27px;
+                }
+            }
+        }
     }
 }
 
