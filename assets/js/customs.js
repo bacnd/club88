@@ -1,6 +1,8 @@
 $(document).ready(function() {
     'use strict';
 
+    setHeaderClass();
+
     $('.fv-slider').slick({
         autoplay: true,
         autoplaySpeed: 5000,
@@ -48,12 +50,30 @@ $(document).ready(function() {
 
     var carousel = $('#eventCarousel');
     carousel.waterwheelCarousel({
-        flankingItems: 3
+        flankingItems: 3,
+        autoPlay: 5000,
+        startingItem: 1,
+        separation: 195,
+        sizeMultiplier: 0.8,
+        opacityMultiplier: 0.7
     });
 
     var carouselsp = $('#eventCarouselsp');
     carouselsp.waterwheelCarousel({
-        flankingItems: 3
+        flankingItems: 3,
+        autoPlay: 5000,
+        sizeMultiplier: 0.8
+    });
+
+    $('.prev-event').bind('click', function() {
+        carousel.prev();
+        carouselsp.prev();
+        return false;
+    });
+    $('.next-event').bind('click', function() {
+        carousel.next();
+        carouselsp.next();
+        return false;
     });
 
     $(window).resize(function() {
@@ -77,4 +97,48 @@ $(document).ready(function() {
             });
         });
     }
+
+    $('ul.tabs li').click(function() {
+        var tab_id = $(this).attr('data-tab');
+
+        $('ul.tabs li').removeClass('current');
+        $('.tab-content .tab-item').removeClass('current');
+
+        $(this).addClass('current');
+        $('#' + tab_id).addClass('current');
+    });
+
+    $('ul.tabs-typecard li').click(function() {
+        var tab_num = $(this).attr('data-tab');
+
+        $('ul.tabs-typecard li').removeClass('current');
+        $('.table__card-detail tr th, .table__card-detail tr td').removeClass('current');
+
+        $(this).addClass('current');
+        $('.table__card-detail tr th:nth-child(1), .table__card-detail tr td:nth-child(1)').addClass('current');
+        $('.table__card-detail tr th:nth-child(' + (parseInt(tab_num) + 1) + '), .table__card-detail tr td:nth-child(' + (parseInt(tab_num) + 1) + ')').addClass('current');
+    });
+
+    // Target tab Game
+    var idTab = window.top.location.hash;
+    $(idTab).prop('checked', true);
 });
+
+function setHeaderClass() {
+    var currentPath = '';
+
+    currentPath = location.pathname.split('/')[1];
+    console.log(currentPath);
+    $('.nav-menu li').each(function() {
+        var linkmenu = $(this)
+            .find('a')
+            .attr('href');
+        if (linkmenu === currentPath) {
+            $(this).addClass('current-menu-item');
+            return false;
+        }
+        if (currentPath === '') {
+            $('.nav-menu li:eq(0)').addClass('current-menu-item');
+        }
+    });
+}

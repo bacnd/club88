@@ -1,0 +1,356 @@
+#membership {
+    .membership__content {
+        padding: 4vw 10px;
+        @include min_769 {
+            padding: 50px 98px;
+        }
+        @media screen and (max-width: 1024px) and (min-width: 769px) {
+            padding: 50px 5vw;
+        }
+        .tabs {
+            .tab-link {
+                max-width: 486px;
+                width: 100%;
+                height: 70px;
+                background-color: #a1885c;
+                font-size: 27px;
+                font-weight: 600;
+                line-height: 0.74;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $clr-white;
+                cursor: pointer;
+                position: relative;
+                @include resizefont(16px, 36px);
+                @include max_768 {
+                    height: 55px;
+                }
+                &.current {
+                    color: #fff282;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        background: rgba($clr-white, 0.3);
+                        height: 12px;
+                        width: 100%;
+                        bottom: 0;
+                        right: 0;
+                        @include max_768 {
+                            height: 10px;
+                        }
+                    }
+                    &::after {
+                        content: '';
+                        display: block;
+                        border-width: 10px 10px 0;
+                        border-style: solid;
+                        border-color: #bdac8d transparent transparent;
+                        margin-left: -10px;
+                        position: absolute;
+                        bottom: -10px;
+                        left: 50%;
+                    }
+                }
+                & + .tab-link {
+                    margin-left: 2px;
+                }
+            }
+        }
+        .tab-content {
+            margin-top: 8vw;
+            @include min_769 {
+                margin-top: 60px;
+            }
+            .tab-item {
+                display: none;
+                &.current {
+                    display: block;
+                }
+            }
+            .mbr-tlt {
+                font-size: 30px;
+                font-weight: 500;
+                margin-bottom: 15px;
+                @include resizefont(18px, 36px);
+            }
+            p {
+                font-size: 16px;
+
+                @include resizefont(16px, 32px);
+                @include min_769 {
+                    line-height: 2;
+                }
+            }
+            .list__mbr-card {
+                margin-top: 35px;
+                justify-content: center;
+                justify-content: space-between;
+                @include max_768 {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+                .item__mbr-card {
+                    width: calc(50% - 5px);
+                    text-align: center;
+                    margin-bottom: 7vw;
+                    @include max_768 {
+                        img {
+                            margin: auto;
+                        }
+                    }
+                    @include min_769 {
+                        max-width: 162px;
+                        width: 100%;
+                        margin-bottom: 0;
+                    }
+                    figcaption {
+                        margin-top: 15px;
+                        .card-name {
+                            font-size: 28px;
+                            font-weight: 500;
+                            @include resizefont(25px, 50px);
+                        }
+                        .card-des {
+                            font-size: 14px;
+                            font-weight: 500;
+                            text-transform: uppercase;
+                            margin-top: 6px;
+                            @include resizefont(14px, 28px);
+                            @include max_768 {
+                                line-height: 1.36;
+                            }
+                        }
+                    }
+                    @include max_768 {
+                        &:nth-child(even) {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+            .table__card-detail {
+                margin-top: 41px;
+                @include max_768 {
+                    width: 100%;
+                    margin-top: 24px;
+                    color: #534a30;
+                }
+                thead {
+                    background-color: #a1885c;
+                    color: $clr-white;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    tr {
+                        th {
+                            padding: 19px 17px;
+                            border: 1px solid $clr-white;
+                            @include resizefont(18px, 36px);
+                            @include max_768 {
+                                display: none;
+                                &.current {
+                                    display: table-cell;
+                                }
+                            }
+                            &:first-child {
+                                text-align: left;
+                                width: 173px;
+                                @include max_768 {
+                                    width: 45%;
+                                    text-align: center;
+                                    @include res_320 {
+                                        width: 50%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                tbody {
+                    font-size: 16px;
+                    tr {
+                        td {
+                            border: 1px solid #d7d7d7;
+                            text-align: center;
+                            padding: 3px 10px;
+                            font-size: 14px;
+                            font-weight: 500;
+                            height: 25px;
+                            @include resizefont(16px, 32px);
+                            @include max_768 {
+                                display: none;
+                                &.current {
+                                    display: table-cell;
+                                }
+                            }
+                            &:first-child {
+                                text-align: left;
+                                padding: 3px 17px;
+                                font-size: 16px;
+                                @include resizefont(16px, 32px);
+                                @include max_768 {
+                                    padding: 3px 14px;
+                                }
+                            }
+                        }
+                    }
+                    .row__parent {
+                        td {
+                            background: rgba(#a1885c, 0.5);
+                        }
+                        .parent__tlt {
+                            background: rgba(#a1885c, 0.85);
+                            color: #fff282;
+                        }
+                    }
+                    .row__child {
+                        td {
+                            background: #e8e8e8;
+                        }
+                        .child__tlt {
+                            background: #d7d7d7;
+                        }
+                    }
+                    .row__grachi {
+                        td {
+                            background: #f6f6f6;
+                        }
+                        .grach__tlt {
+                            background: #ebebeb;
+                        }
+                    }
+                }
+            }
+            .tabs-typecard {
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 10px;
+                .tab-link {
+                    background-color: #7f6639;
+                    color: #fff1d8;
+                    @include resizefont(16px, 36px);
+                    font-weight: 600;
+                    line-height: 1;
+                    padding: 23px 2px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex: 1;
+                    text-transform: uppercase;
+                    max-width: 232px;
+                    width: 100%;
+                    cursor: pointer;
+                    &.current {
+                        color: #fff282;
+                        position: relative;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            background: rgba(255, 255, 255, 0.2);
+                            height: 10px;
+                            width: 100%;
+                            bottom: 0;
+                        }
+                        &::after {
+                            content: '';
+                            display: block;
+                            border-width: 10px 10px 0;
+                            border-style: solid;
+                            border-color: #9a8765 transparent transparent;
+                            margin-left: -10px;
+                            position: absolute;
+                            bottom: -10px;
+                            left: 50%;
+                        }
+                    }
+                    & + .tab-link {
+                        margin-left: 7px;
+                        @include res_320 {
+                            margin-left: 4px;
+                        }
+                    }
+                }
+            }
+            .terms__conditions {
+                margin-top: 65px;
+                @include max_768 {
+                    margin-top: 10vw;
+                }
+                .tercon__tlt {
+                    font-size: 16px;
+                    font-weight: bold;
+                    line-height: 1.56;
+                    color: #534a30;
+                    text-transform: uppercase;
+                    border-bottom: 3px solid #a1885c;
+                    padding-bottom: 3px;
+                    margin-bottom: 25px;
+                    @include resizefont(18px, 36px);
+                }
+            }
+
+            .post__reward {
+                padding-bottom: 8vw;
+                @include min_769 {
+                    padding-bottom: 49px;
+                }
+                .reward-tlt {
+                    font-size: 27px;
+                    font-weight: 600;
+                    line-height: 1.42;
+                    text-transform: uppercase;
+                    position: relative;
+                    @include resizefont(18px, 36px);
+                    padding-bottom: 3vw;
+                    @include min_769 {
+                        padding-bottom: 23px;
+                    }
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        background: url('../images/membership/br-reward.png') left no-repeat;
+                        width: 61px;
+                        height: 4px;
+                        left: 0;
+                        bottom: 0;
+                    }
+                }
+                .reward__ct {
+                    margin-top: 4vw;
+                    @include min_769 {
+                        margin-top: 32px;
+                    }
+                    &--tlt {
+                        font-size: 27px;
+                        font-weight: 600;
+                        line-height: 1.42;
+                        margin-bottom: 12px;
+                        @include resizefont(17px, 34px);
+                    }
+                    p {
+                        font-size: 16px;
+                        line-height: 2;
+                        @include resizefont(16px, 32px);
+                    }
+                    figure {
+                        text-align: center;
+                        margin-top: 5vw;
+                        margin-bottom: 5vw;
+                        @include min_769 {
+                            margin-top: 55px;
+                            margin-bottom: 50px;
+                        }
+                    }
+                }
+                & + .post__reward {
+                    border-top: 1px solid #d7d7d7;
+                    padding-top: 6vw;
+                    @include min_769 {
+                        padding-top: 32px;
+                    }
+                }
+            }
+        }
+    }
+}

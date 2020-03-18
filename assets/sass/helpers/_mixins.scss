@@ -209,16 +209,13 @@
 //         @content;
 //     }
 // }
-// @mixin res_768() {
-//     @media #{$res_768} {
-//         @content;
-//     }
-// }
-// @mixin res_992() {
-//     @media #{$res_992} {
-//         @content;
-//     }
-// }
+
+@mixin res_768() {
+    @media #{$res_768} {
+        @content;
+    }
+}
+
 // @mixin res_1024() {
 //     @media #{$res_1024} {
 //         @content;
@@ -265,6 +262,18 @@
 
 @mixin max_768() {
     @media #{$max_768} {
+        @content;
+    }
+}
+
+@mixin res_992() {
+    @media #{$res_992} {
+        @content;
+    }
+}
+
+@mixin fixIE {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
         @content;
     }
 }

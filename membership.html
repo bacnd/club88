@@ -9,24 +9,388 @@
         <meta name="keywords" content="" />
         <meta name="description" content="" />
 
+        <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+
+        <meta name="theme-color" content="#cfc1ac" />
+        <meta name="msapplication-navbutton-color" content="#cfc1ac" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="#cfc1ac" />
+
+        <!-- To run web application in full-screen -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
         <!-- CSS -->
         <link href="assets/css/styles.css" rel="stylesheet" />
         <link href="assets/css/slick.css" rel="stylesheet" />
-
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/include.js"></script>
     </head>
     <body class="page-noslider page-membership">
         <div id="wrapper">
-            <script type="text/javascript">
-                loadHeader();
-            </script>
+            <header id="header">
+                <div class="top-header">
+                    <div class="th-content dl-flex">
+                        <h1 class="logo">
+                            <a href="index.html"><img src="./assets/images/common/logo.svg" alt="logo"/></a>
+                        </h1>
+                        <div class="th-right dl-flex">
+                            <div class="hd-lang">
+                                <select class="box-lang">
+                                    <option value="EN" class="current-lang">English</option>
+                                    <option value="JA">Japan</option>
+                                    <option value="CN">China</option>
+                                    <option value="KR">Korea</option>
+                                </select>
+                            </div>
+                            <a href="#" class="search-toggle" data-selector="#header"></a>
+                        </div>
+                        <form action="#" class="search-box">
+                            <input type="text" class="text search-input" placeholder="Search..." />
+                            <button class="searchsubmit" type="submit" id="searchsubmit" />
+                        </form>
+                    </div>
+                </div>
+                <div class="bottom-header">
+                    <div class="container">
+                        <ul class="nav-menu dl-flex">
+                            <li class="dl-pc">
+                                <a href="index.html"><img src="./assets/images/common/ic-home.png" alt="Home"/></a>
+                            </li>
+                            <li>
+                                <a href="about.html">私たちについて</a>
+                            </li>
+                            <li>
+                                <a href="news.html">ニュース</a>
+                            </li>
+                            <li>
+                                <a href="howtoplay.html">初心者の方へ・ゲームについて</a>
+                            </li>
+                            <li>
+                                <a href="event.html">イベント・プロモーション</a>
+                            </li>
+                            <li>
+                                <a href="membership.html">会員特典</a>
+                            </li>
+                            <li>
+                                <a href="gallery.html">ギャラリー</a>
+                            </li>
+                            <li>
+                                <a href="access.html">アクセス</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="lang-flag dl-sp">
+                        <li class="item-lang-flag">
+                            <a href="#"><img src="./assets/images/common/ic-en.png" alt="en"/></a>
+                        </li>
+                        <li class="item-lang-flag">
+                            <a href="#"><img src="./assets/images/common/ic-jp.png" alt="jp"/></a>
+                        </li>
+                        <li class="item-lang-flag">
+                            <a href="#"><img src="./assets/images/common/ic-cn.png" alt="cn"/></a>
+                        </li>
+                        <li class="item-lang-flag">
+                            <a href="#"><img src="./assets/images/common/ic-kr.png" alt="kr"/></a>
+                        </li>
+                    </ul>
+                </div>
+                <button id="navLine" class="nav-toggle">
+                    <span></span>
+                </button>
+            </header>
             <main id="contents">
                 <section class="box-section bg-topsection" id="membership">
                     <div class="container">
                         <div class="section-ct">
                             <h2 class="section-tlt">会員特典</h2>
-                            <div class="membership__content bg-white"></div>
+                            <div class="membership__content bg-white">
+                                <ul class="tabs dl-flex">
+                                    <li class="tab-link current" data-tab="memberCard">Member's card</li>
+                                    <li class="tab-link" data-tab="reward">Reward</li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-item current" id="memberCard">
+                                        <h3 class="mbr-tlt">EXPERIENCE NEXT-LEVEL REWARDS</h3>
+                                        <p>スト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト スト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキストテキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト</p>
+                                        <div class="list__mbr-card dl-flex">
+                                            <figure class="item__mbr-card">
+                                                <img src="./assets/images/membership/card-primer.png" alt="card" class="dl-pc" />
+                                                <img src="./assets/images/membership/card-primer-sp.png" alt="card" class="dl-sp" />
+                                                <figcaption>
+                                                    <p class="card-name">PRIMER</p>
+                                                    <p class="card-des">Free Sign-up</p>
+                                                </figcaption>
+                                            </figure>
+                                            <figure class="item__mbr-card">
+                                                <img src="./assets/images/membership/card-gold.png" alt="card" class="dl-pc" />
+                                                <img src="./assets/images/membership/card-gold-sp.png" alt="card" class="dl-sp" />
+                                                <figcaption>
+                                                    <p class="card-name">GOLD</p>
+                                                    <p class="card-des">Earn 100 Tier points to upgrade</p>
+                                                </figcaption>
+                                            </figure>
+                                            <figure class="item__mbr-card">
+                                                <img src="./assets/images/membership/card-platium.png" alt="card" class="dl-pc" />
+                                                <img src="./assets/images/membership/card-platium-sp.png" alt="card" class="dl-sp" />
+                                                <figcaption>
+                                                    <p class="card-name">PLATIUM</p>
+                                                    <p class="card-des">Earn 500 Tier points to upgrade</p>
+                                                </figcaption>
+                                            </figure>
+                                            <figure class="item__mbr-card">
+                                                <img src="./assets/images/membership/card-diamond.png" alt="card" class="dl-pc" />
+                                                <img src="./assets/images/membership/card-diamond-sp.png" alt="card" class="dl-sp" />
+                                                <figcaption>
+                                                    <p class="card-name">DIAMOND</p>
+                                                    <p class="card-des">Earn 2,500 Tier points to upgrade</p>
+                                                </figcaption>
+                                            </figure>
+                                            <figure class="item__mbr-card">
+                                                <img src="./assets/images/membership/card-vvip.png" alt="card" class="dl-pc" />
+                                                <img src="./assets/images/membership/card-vvip-sp.png" alt="card" class="dl-sp" />
+                                                <figcaption>
+                                                    <p class="card-name">VVIP</p>
+                                                    <p class="card-des">Earn 2,500 Tier points to upgrade</p>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="dl-sp">
+                                            <ul class="tabs-typecard dl-flex">
+                                                <li class="tab-link current" data-tab="1">Primer</li>
+                                                <li class="tab-link" data-tab="2">Gold</li>
+                                            </ul>
+                                            <ul class="tabs-typecard dl-flex">
+                                                <li class="tab-link" data-tab="3">Platium</li>
+                                                <li class="tab-link" data-tab="4">Diamond</li>
+                                                <li class="tab-link" data-tab="5">VVIP</li>
+                                            </ul>
+                                        </div>
+                                        <table class="table__card-detail">
+                                            <thead>
+                                                <tr>
+                                                    <th class="current">Casino</th>
+                                                    <th class="current">Primer</th>
+                                                    <th>Gold</th>
+                                                    <th>Platium</th>
+                                                    <th>Diamond</th>
+                                                    <th>VVIP</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="row__parent">
+                                                    <td class="parent__tlt current">Transform</td>
+                                                    <td class="current"></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr class="row__grachi">
+                                                    <td class="grachi__tlt current">Airplane ticket</td>
+                                                    <td class="current"></td>
+                                                    <td>x</td>
+                                                    <td>x</td>
+                                                    <td>x</td>
+                                                    <td>x</td>
+                                                </tr>
+                                                <tr class="row__parent">
+                                                    <td class="parent__tlt current">Hotel</td>
+                                                    <td class="current"></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr class="row__child">
+                                                    <td class="child__tlt current">Furama resort</td>
+                                                    <td class="current"></td>
+                                                    <td>Free one night (200 points)</td>
+                                                    <td>Free one night (180 points)</td>
+                                                    <td>Free one night (160 points)</td>
+                                                    <td>Free one night (160 points)</td>
+                                                </tr>
+                                                <tr class="row__grachi">
+                                                    <td class="grachi__tlt current">Hotel and others</td>
+                                                    <td class="current"></td>
+                                                    <td>x</td>
+                                                    <td>x</td>
+                                                    <td>x</td>
+                                                    <td>x</td>
+                                                </tr>
+                                                <tr class="row__parent">
+                                                    <td class="parent__tlt current">Entertainment</td>
+                                                    <td class="current"></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr class="row__grachi">
+                                                    <td class="grachi__tlt current">Refund</td>
+                                                    <td class="current">1 point ~ 0.5USD</td>
+                                                    <td>1 point ~ 0.5USD</td>
+                                                    <td>1 point ~ 1USD</td>
+                                                    <td>1 point ~ 1USD</td>
+                                                    <td>1 point ~ 1USD</td>
+                                                </tr>
+                                                <tr class="row__child">
+                                                    <td class="child__tlt current">Birthday Gift</td>
+                                                    <td class="current"></td>
+                                                    <td>50 Free Coupon</td>
+                                                    <td>100 Free Coupon (3 pieces)</td>
+                                                    <td>100 Free Coupon (3 pieces)</td>
+                                                    <td>100 Free Coupon (3 pieces)</td>
+                                                </tr>
+                                                <tr class="row__grachi">
+                                                    <td class="grachi__tlt current">Golf (18 holes)</td>
+                                                    <td class="current"></td>
+                                                    <td>
+                                                        One times<br />
+                                                        Mon-Fri: 90 points<br />
+                                                        Sar-Sun: 120 points
+                                                    </td>
+                                                    <td>
+                                                        One times<br />
+                                                        Mon-Fri: 90 points<br />
+                                                        Sar-Sun: 120 points
+                                                    </td>
+                                                    <td>
+                                                        One times<br />
+                                                        Mon-Fri: 80 points<br />
+                                                        Sar-Sun: 120 points
+                                                    </td>
+                                                    <td>
+                                                        One times<br />
+                                                        Mon-Fri: 80 points<br />
+                                                        Sar-Sun: 120 points
+                                                    </td>
+                                                </tr>
+                                                <tr class="row__parent">
+                                                    <td class="parent__tlt current">Restaurant</td>
+                                                    <td class="current"></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr class="row__grachi">
+                                                    <td class="grachi__tlt current">Furama Restaurant</td>
+                                                    <td class="current"></td>
+                                                    <td>1 meal tickets (40 points)</td>
+                                                    <td>1 meal tickets (35 points)</td>
+                                                    <td>1 meal tickets (30 points)</td>
+                                                    <td>1 meal tickets (30 points)</td>
+                                                </tr>
+                                                <tr class="row__parent">
+                                                    <td class="parent__tlt current">Spa</td>
+                                                    <td class="current"></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr class="row__grachi">
+                                                    <td class="grachi__tlt current">Furama</td>
+                                                    <td class="current"></td>
+                                                    <td></td>
+                                                    <td>1 spa tickets (30 points)</td>
+                                                    <td>1 spa tickets (27 points)</td>
+                                                    <td>1 spa tickets (27 points)</td>
+                                                </tr>
+                                                <tr class="row__parent">
+                                                    <td class="parent__tlt current">Other services</td>
+                                                    <td class="current"></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr class="row__grachi">
+                                                    <td class="grachi__tlt current">Special Promotion</td>
+                                                    <td class="current">x</td>
+                                                    <td>x</td>
+                                                    <td>x</td>
+                                                    <td>x</td>
+                                                    <td>x</td>
+                                                </tr>
+                                                <tr class="row__child">
+                                                    <td class="child__tlt current">Email Provided</td>
+                                                    <td class="current">4 points</td>
+                                                    <td>4 points</td>
+                                                    <td>4 points</td>
+                                                    <td>4 points</td>
+                                                    <td>4 points</td>
+                                                </tr>
+                                                <tr class="row__grachi">
+                                                    <td class="grachi__tlt current"></td>
+                                                    <td class="current"></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr class="row__child">
+                                                    <td class="child__tlt current"></td>
+                                                    <td class="current"></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="terms__conditions">
+                                            <h3 class="tercon__tlt">Terms & conditions</h3>
+                                            <p>スト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト スト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト</p>
+                                            <br />
+                                            <p>スト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト スト テキスト テキスト テキスト テキスト テキスト</p>
+                                            <br />
+                                            <p>スト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト スト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト</p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-item" id="reward">
+                                        <div class="post__reward">
+                                            <h3 class="reward-tlt">My WinStar</h3>
+                                            <div class="reward__ct">
+                                                <h4 class="reward__ct--tlt">Make the World’s Biggest Casino yours.</h4>
+                                                <p>
+                                                    テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト
+                                                    テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト
+                                                </p>
+                                                <figure><img src="./assets/images/membership/reward-01.jpg" alt="reward" /></figure>
+                                                <p>
+                                                    テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト
+                                                    テキスト テキスト テキスト
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="post__reward">
+                                            <h3 class="reward-tlt">Club Passport</h3>
+                                            <div class="reward__ct">
+                                                <h4 class="reward__ct--tlt">World’s biggest rewards.</h4>
+                                                <figure><img src="./assets/images/membership/reward-02.jpg" alt="reward" /></figure>
+                                                <p>
+                                                    テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト
+                                                    テキスト テキスト テキスト
+                                                </p>
+                                                <br />
+                                                <p>
+                                                    テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト
+                                                    テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="post__reward">
+                                            <h3 class="reward-tlt">Club Passport</h3>
+                                            <div class="reward__ct">
+                                                <h4 class="reward__ct--tlt">World’s biggest rewards.</h4>
+                                                <figure><img src="./assets/images/membership/reward-03.jpg" alt="reward" /></figure>
+                                                <p>
+                                                    テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト
+                                                    テキスト テキスト テキスト
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -37,19 +401,19 @@
                         <h3 class="follow-us">Follow US</h3>
                         <ul class="fl-sns dl-flex">
                             <li>
-                                <a href="#" target="_blank"><img src="./assets/images/common/fl-line.png" alt="line"/></a>
+                                <a href="#" target="_blank"><img src="./assets/images/common/fl-line.svg" alt="line"/></a>
                             </li>
                             <li>
-                                <a href="#" target="_blank"><img src="./assets/images/common/fl-wechat.png" alt="wechat"/></a>
+                                <a href="#" target="_blank"><img src="./assets/images/common/fl-wechat.svg" alt="wechat"/></a>
                             </li>
                             <li>
-                                <a href="#" target="_blank"><img src="./assets/images/common/fl-kakaotalk.png" alt="kakaotalk"/></a>
+                                <a href="#" target="_blank"><img src="./assets/images/common/fl-kakaotalk.svg" alt="kakaotalk"/></a>
                             </li>
                             <li>
-                                <a href="#" target="_blank"><img src="./assets/images/common/fl-twitter.png" alt="twitter"/></a>
+                                <a href="#" target="_blank"><img src="./assets/images/common/fl-twitter.svg" alt="twitter"/></a>
                             </li>
                             <li>
-                                <a href="#" target="_blank"><img src="./assets/images/common/fl-instagram.png" alt="instagram"/></a>
+                                <a href="#" target="_blank"><img src="./assets/images/common/fl-instagram.svg" alt="instagram"/></a>
                             </li>
                         </ul>
                     </div>
@@ -83,13 +447,68 @@
                     </div>
                 </section>
             </main>
-            <script type="text/javascript">
-                loadFooter();
-            </script>
+            <footer id="footer">
+                <ul class="sns-list">
+                    <li class="sns-item">
+                        <a href="#" target="_blank"><img src="./assets/images/common/ic-line.svg" alt="line"/></a>
+                    </li>
+                    <li class="sns-item">
+                        <a href="#" target="_blank"><img src="./assets/images/common/ic-wechat.svg" alt="wechat"/></a>
+                    </li>
+                    <li class="sns-item">
+                        <a href="#" target="_blank"><img src="./assets/images/common/ic-kakaotalk.svg" alt="kakaotalk"/></a>
+                    </li>
+                    <li class="sns-item">
+                        <a href="#" target="_blank"><img src="./assets/images/common/ic-instagram.svg" alt="instagram"/></a>
+                    </li>
+                    <li class="sns-item">
+                        <a href="#" target="_blank"><img src="./assets/images/common/ic-twitter.svg" alt="twitter"/></a>
+                    </li>
+                </ul>
+                <div class="container">
+                    <div class="ft-content dl-flex">
+                        <div class="ft-left">
+                            <div class="ft-logo">
+                                <a href="index.html"><img src="./assets/images/common/logo-ft.svg" alt="logo footer"/></a>
+                            </div>
+                            <div id="map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12172.248546053921!2d108.21908200374483!3d16.06455626965546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1582000158124!5m2!1svi!2s" allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+                        <div class="ft-right">
+                            <div class="ft-contact">
+                                <p class="ft-com">danangclub88</p>
+                                <p class="ft-address">text text text text text text<br />text text text text text text text text text</p>
+                                <div class="ft-phone"><a href="tel:084-000.000.000">084-000.000.000</a></div>
+                            </div>
+                            <div class="ft-menu_list dl-flex">
+                                <ul class="ft-menu">
+                                    <li><a href="about.html">私たちについて</a></li>
+                                    <li><a href="news.html">ニュース</a></li>
+                                    <li><a href="howtoplay.html">初心者の方へ・ゲームについて</a></li>
+                                    <li><a href="event.html">イベント・プロモーション</a></li>
+                                    <li><a href="membership.html">会員特典</a></li>
+                                    <li><a href="gallery.html">ギャラリー</a></li>
+                                    <li><a href="access.html">アクセス</a></li>
+                                </ul>
+                                <ul class="ft-menu">
+                                    <li><a href="partnership.html">パートナーシップについて</a></li>
+                                    <li><a href="faq.html">FAQ</a></li>
+                                    <li><a href="recruit.html">採用情報</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="copyright" lang="en">Copyright © CLUB88 AT GRAND MERCURE DANANG 2020</div>
+                </div>
+            </footer>
         </div>
         <!-- js -->
+        <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/slick.min.js"></script>
         <script src="assets/js/jquery.waterwheelCarousel.min.js"></script>
+        <script src="assets/js/masonry.pkgd.min.js"></script>
+        <script src="assets/js/imagesloaded.pkgd.js"></script>
         <script src="assets/js/customs.js"></script>
     </body>
 </html>

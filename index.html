@@ -9,18 +9,93 @@
         <meta name="keywords" content="" />
         <meta name="description" content="" />
 
+        <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+
+        <meta name="theme-color" content="#cfc1ac" />
+        <meta name="msapplication-navbutton-color" content="#cfc1ac" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="#cfc1ac" />
+
+        <!-- To run web application in full-screen -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
         <!-- CSS -->
+        <link href="assets/css/lightbox.min.css" rel="stylesheet" />
         <link href="assets/css/styles.css" rel="stylesheet" />
         <link href="assets/css/slick.css" rel="stylesheet" />
-
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/include.js"></script>
     </head>
     <body>
         <div id="wrapper">
-            <script type="text/javascript">
-                loadHeader();
-            </script>
+            <header id="header">
+                <div class="top-header">
+                    <div class="th-content dl-flex">
+                        <h1 class="logo">
+                            <a href="index.html"><img src="./assets/images/common/logo.svg" alt="logo"/></a>
+                        </h1>
+                        <div class="th-right dl-flex">
+                            <div class="hd-lang">
+                                <select class="box-lang">
+                                    <option value="EN" class="current-lang">English</option>
+                                    <option value="JA">Japan</option>
+                                    <option value="CN">China</option>
+                                    <option value="KR">Korea</option>
+                                </select>
+                            </div>
+                            <a href="#" class="search-toggle" data-selector="#header"></a>
+                        </div>
+                        <form action="#" class="search-box">
+                            <input type="text" class="text search-input" placeholder="Search..." />
+                            <button class="searchsubmit" type="submit" id="searchsubmit" />
+                        </form>
+                    </div>
+                </div>
+                <div class="bottom-header">
+                    <div class="container">
+                        <ul class="nav-menu dl-flex">
+                            <li class="dl-pc">
+                                <a href="index.html"><img src="./assets/images/common/ic-home.png" alt="Home"/></a>
+                            </li>
+                            <li>
+                                <a href="about.html">私たちについて</a>
+                            </li>
+                            <li>
+                                <a href="news.html">ニュース</a>
+                            </li>
+                            <li>
+                                <a href="howtoplay.html">初心者の方へ・ゲームについて</a>
+                            </li>
+                            <li>
+                                <a href="event.html">イベント・プロモーション</a>
+                            </li>
+                            <li>
+                                <a href="membership.html">会員特典</a>
+                            </li>
+                            <li>
+                                <a href="gallery.html">ギャラリー</a>
+                            </li>
+                            <li>
+                                <a href="access.html">アクセス</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="lang-flag dl-sp">
+                        <li class="item-lang-flag">
+                            <a href="#"><img src="./assets/images/common/ic-en.png" alt="en"/></a>
+                        </li>
+                        <li class="item-lang-flag">
+                            <a href="#"><img src="./assets/images/common/ic-jp.png" alt="jp"/></a>
+                        </li>
+                        <li class="item-lang-flag">
+                            <a href="#"><img src="./assets/images/common/ic-cn.png" alt="cn"/></a>
+                        </li>
+                        <li class="item-lang-flag">
+                            <a href="#"><img src="./assets/images/common/ic-kr.png" alt="kr"/></a>
+                        </li>
+                    </ul>
+                </div>
+                <button id="navLine" class="nav-toggle">
+                    <span></span>
+                </button>
+            </header>
             <main id="contents">
                 <div class="box-fvhome half-circle">
                     <ul class="fv-slider">
@@ -48,7 +123,7 @@
                             <figure class="intro-img"><img src="./assets/images/top/home-01.jpg" alt="Club88 introduction" class="dl-pc" /> <img src="./assets/images/top/home-01-sp.jpg" alt="Club88 introduction" class="dl-sp" /></figure>
                             <div class="txt-ct">
                                 <p class="txt">テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト テキスト</p>
-                                <a href="#" class="btn-more btn-intro">See more</a>
+                                <a href="about.html" class="btn-more btn-intro">See more</a>
                             </div>
                         </div>
                     </div>
@@ -59,34 +134,32 @@
                         <div id="eventCarousel">
                             <div class="evnmain-slider">
                                 <div class="item-evnmain">
-                                    <a href="#"><img src="assets/images/top/home-02.jpg" alt="event"/></a>
+                                    <a href=""><img src="assets/images/top/home-02.jpg" alt="event"/></a>
                                 </div>
                                 <div class="item-evnmain">
-                                    <a href="#"><img src="assets/images/top/home-02.jpg" alt="event"/></a>
+                                    <a href=""><img src="assets/images/top/home-15.jpg" alt="event"/></a>
                                 </div>
                                 <div class="item-evnmain">
-                                    <a href="#"><img src="assets/images/top/home-02.jpg" alt="event"/></a>
-                                </div>
-                                <div class="item-evnmain">
-                                    <a href="#"><img src="assets/images/top/home-02.jpg" alt="event"/></a>
+                                    <a href=""><img src="assets/images/top/home-16.jpg" alt="event"/></a>
                                 </div>
                             </div>
+                            <a href="#" class="prev-event">Prev</a>
+                            <a href="#" class="next-event">Next</a>
                         </div>
                         <div id="eventCarouselsp">
+                            <a href="#" class="prev-event">Prev</a>
                             <div class="evnmain-slider">
                                 <div class="item-evnmain">
-                                    <a href="#"><img src="assets/images/top/home-02-sp.jpg" alt="event"/></a>
+                                    <a href=""><img src="assets/images/top/home-02-sp.jpg" alt="event"/></a>
                                 </div>
                                 <div class="item-evnmain">
-                                    <a href="#"><img src="assets/images/top/home-02-sp.jpg" alt="event"/></a>
+                                    <a href=""><img src="assets/images/top/home-023-sp.jpg" alt="event"/></a>
                                 </div>
                                 <div class="item-evnmain">
-                                    <a href="#"><img src="assets/images/top/home-02-sp.jpg" alt="event"/></a>
-                                </div>
-                                <div class="item-evnmain">
-                                    <a href="#"><img src="assets/images/top/home-02-sp.jpg" alt="event"/></a>
+                                    <a href=""><img src="assets/images/top/home-024-sp.jpg" alt="event"/></a>
                                 </div>
                             </div>
+                            <a href="#" class="next-event">Next</a>
                         </div>
                     </div>
                 </section>
@@ -95,7 +168,7 @@
                         <h2 class="section-tlt">ニュース</h2>
                         <ul class="news-list dl-flex">
                             <li class="news-items">
-                                <a href="#">
+                                <a href="news-detail.html">
                                     <figure class="news-img"><img src="./assets/images/top/home-03.jpg" alt="news" /></figure>
                                     <div class="news-date">01-07-2020</div>
                                     <h3 class="news-tlt">テキスト テキスト テキスト テキテキスト テキ</h3>
@@ -103,7 +176,7 @@
                                 </a>
                             </li>
                             <li class="news-items">
-                                <a href="#">
+                                <a href="news-detail.html">
                                     <figure class="news-img"><img src="./assets/images/top/home-04.jpg" alt="news" /></figure>
                                     <div class="news-date">12-06-2019</div>
                                     <h3 class="news-tlt">テキスト テキスト テキスト テキテキスト テキ</h3>
@@ -111,7 +184,7 @@
                                 </a>
                             </li>
                             <li class="news-items">
-                                <a href="#">
+                                <a href="news-detail.html">
                                     <figure class="news-img"><img src="./assets/images/top/home-05.jpg" alt="news" /></figure>
                                     <div class="news-date">11-01-2019</div>
                                     <h3 class="news-tlt">テキスト テキスト テキスト テキテキスト テキ</h3>
@@ -119,7 +192,7 @@
                                 </a>
                             </li>
                             <li class="news-items">
-                                <a href="#">
+                                <a href="news-detail.html">
                                     <figure class="news-img"><img src="./assets/images/top/home-06.jpg" alt="news" /></figure>
                                     <div class="news-date">08-01-2019</div>
                                     <h3 class="news-tlt">テキスト テキスト テキスト テキテキスト テキ</h3>
@@ -127,7 +200,7 @@
                                 </a>
                             </li>
                             <li class="news-items">
-                                <a href="#">
+                                <a href="news-detail.html">
                                     <figure class="news-img"><img src="./assets/images/top/home-07.jpg" alt="news" /></figure>
                                     <div class="news-date">11-01-2019</div>
                                     <h3 class="news-tlt">テキスト テキスト テキスト テキテキスト テキ</h3>
@@ -135,7 +208,7 @@
                                 </a>
                             </li>
                             <li class="news-items">
-                                <a href="#">
+                                <a href="news-detail.html">
                                     <figure class="news-img"><img src="./assets/images/top/home-08.jpg" alt="news" /></figure>
                                     <div class="news-date">11-01-2019</div>
                                     <h3 class="news-tlt">テキスト テキスト テキスト テキテキスト テキ</h3>
@@ -143,7 +216,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <a href="#" class="btn-more btn-bai btn-news">See more</a>
+                        <a href="news.html" class="btn-more btn-bai btn-news">See more</a>
                     </div>
                 </section>
                 <section class="box-section box-game-list">
@@ -151,7 +224,7 @@
                         <h2 class="section-tlt">GAME LIST</h2>
                         <div class="game-list dl-flex">
                             <div class="game-item">
-                                <a href="#">
+                                <a href="howtoplay.html#tab2">
                                     <figure><img src="./assets/images/top/home-09.jpg" alt="game" /></figure>
                                     <div class="game-content">
                                         <h3 class="game-tlt">Sic Bo</h3>
@@ -160,7 +233,7 @@
                                 </a>
                             </div>
                             <div class="game-item">
-                                <a href="#">
+                                <a href="howtoplay.html#tab2">
                                     <figure><img src="./assets/images/top/home-10.jpg" alt="game" /></figure>
                                     <div class="game-content">
                                         <h3 class="game-tlt">Texas Hold’em</h3>
@@ -169,7 +242,7 @@
                                 </a>
                             </div>
                             <div class="game-item">
-                                <a href="#">
+                                <a href="howtoplay.html#tab2">
                                     <figure><img src="./assets/images/top/home-11.jpg" alt="game" /></figure>
                                     <div class="game-content">
                                         <h3 class="game-tlt">Three Card Poker</h3>
@@ -178,7 +251,7 @@
                                 </a>
                             </div>
                             <div class="game-item">
-                                <a href="#">
+                                <a href="howtoplay.html#tab2">
                                     <figure><img src="./assets/images/top/home-12.jpg" alt="game" /></figure>
                                     <div class="game-content">
                                         <h3 class="game-tlt">Black Jack</h3>
@@ -187,7 +260,7 @@
                                 </a>
                             </div>
                             <div class="game-item">
-                                <a href="#">
+                                <a href="howtoplay.html#tab2">
                                     <figure><img src="./assets/images/top/home-13.jpg" alt="game" /></figure>
                                     <div class="game-content">
                                         <h3 class="game-tlt">Roulette</h3>
@@ -196,7 +269,7 @@
                                 </a>
                             </div>
                             <div class="game-item">
-                                <a href="#">
+                                <a href="howtoplay.html#tab2">
                                     <figure><img src="./assets/images/top/home-14.jpg" alt="game" /></figure>
                                     <div class="game-content">
                                         <h3 class="game-tlt">Baccarat</h3>
@@ -205,7 +278,7 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="#" class="btn-more btn-bai btn-gamelist">See more</a>
+                        <a href="howtoplay.html#tab2" class="btn-more btn-bai btn-gamelist">See more</a>
                     </div>
                 </section>
                 <section class="box-section box-follow-us">
@@ -215,19 +288,19 @@
                         <h3 class="follow-us">Follow US</h3>
                         <ul class="fl-sns dl-flex">
                             <li>
-                                <a href="#" target="_blank"><img src="./assets/images/common/fl-line.png" alt="line"/></a>
+                                <a href="#" target="_blank"><img src="./assets/images/common/fl-line.svg" alt="line"/></a>
                             </li>
                             <li>
-                                <a href="#" target="_blank"><img src="./assets/images/common/fl-wechat.png" alt="wechat"/></a>
+                                <a href="#" target="_blank"><img src="./assets/images/common/fl-wechat.svg" alt="wechat"/></a>
                             </li>
                             <li>
-                                <a href="#" target="_blank"><img src="./assets/images/common/fl-kakaotalk.png" alt="kakaotalk"/></a>
+                                <a href="#" target="_blank"><img src="./assets/images/common/fl-kakaotalk.svg" alt="kakaotalk"/></a>
                             </li>
                             <li>
-                                <a href="#" target="_blank"><img src="./assets/images/common/fl-twitter.png" alt="twitter"/></a>
+                                <a href="#" target="_blank"><img src="./assets/images/common/fl-twitter.svg" alt="twitter"/></a>
                             </li>
                             <li>
-                                <a href="#" target="_blank"><img src="./assets/images/common/fl-instagram.png" alt="instagram"/></a>
+                                <a href="#" target="_blank"><img src="./assets/images/common/fl-instagram.svg" alt="instagram"/></a>
                             </li>
                         </ul>
                     </div>
@@ -243,13 +316,69 @@
                     </div>
                 </section>
             </main>
-            <script type="text/javascript">
-                loadFooter();
-            </script>
+            <footer id="footer">
+                <ul class="sns-list">
+                    <li class="sns-item">
+                        <a href="#" target="_blank"><img src="./assets/images/common/ic-line.svg" alt="line"/></a>
+                    </li>
+                    <li class="sns-item">
+                        <a href="#" target="_blank"><img src="./assets/images/common/ic-wechat.svg" alt="wechat"/></a>
+                    </li>
+                    <li class="sns-item">
+                        <a href="#" target="_blank"><img src="./assets/images/common/ic-kakaotalk.svg" alt="kakaotalk"/></a>
+                    </li>
+                    <li class="sns-item">
+                        <a href="#" target="_blank"><img src="./assets/images/common/ic-instagram.svg" alt="instagram"/></a>
+                    </li>
+                    <li class="sns-item">
+                        <a href="#" target="_blank"><img src="./assets/images/common/ic-twitter.svg" alt="twitter"/></a>
+                    </li>
+                </ul>
+                <div class="container">
+                    <div class="ft-content dl-flex">
+                        <div class="ft-left">
+                            <div class="ft-logo">
+                                <a href="index.html"><img src="./assets/images/common/logo-ft.svg" alt="logo footer"/></a>
+                            </div>
+                            <div id="map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12172.248546053921!2d108.21908200374483!3d16.06455626965546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1582000158124!5m2!1svi!2s" allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+                        <div class="ft-right">
+                            <div class="ft-contact">
+                                <p class="ft-com">danangclub88</p>
+                                <p class="ft-address">text text text text text text<br />text text text text text text text text text</p>
+                                <div class="ft-phone"><a href="tel:084-000.000.000">084-000.000.000</a></div>
+                            </div>
+                            <div class="ft-menu_list dl-flex">
+                                <ul class="ft-menu">
+                                    <li><a href="about.html">私たちについて</a></li>
+                                    <li><a href="news.html">ニュース</a></li>
+                                    <li><a href="howtoplay.html">初心者の方へ・ゲームについて</a></li>
+                                    <li><a href="event.html">イベント・プロモーション</a></li>
+                                    <li><a href="membership.html">会員特典</a></li>
+                                    <li><a href="gallery.html">ギャラリー</a></li>
+                                    <li><a href="access.html">アクセス</a></li>
+                                </ul>
+                                <ul class="ft-menu">
+                                    <li><a href="partnership.html">パートナーシップについて</a></li>
+                                    <li><a href="faq.html">FAQ</a></li>
+                                    <li><a href="recruit.html">採用情報</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="copyright" lang="en">Copyright © CLUB88 AT GRAND MERCURE DANANG 2020</div>
+                </div>
+            </footer>
         </div>
         <!-- js -->
+        <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/slick.min.js"></script>
         <script src="assets/js/jquery.waterwheelCarousel.min.js"></script>
+        <script src="assets/js/masonry.pkgd.min.js"></script>
+        <script src="assets/js/imagesloaded.pkgd.js"></script>
+        <script src="assets/js/lightbox.min.js"></script>
         <script src="assets/js/customs.js"></script>
     </body>
 </html>

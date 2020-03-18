@@ -1,12 +1,12 @@
 #contents {
     @include min_769 {
-        margin-top: -46px;
+        margin-top: -59px;
     }
-    @media screen and (max-width: 1169px) and (min-width: 881px) {
+    @media screen and (min-width: 768px) and (max-width: 880px) {
+        margin-top: -50px;
+    }
+    @media screen and (min-width: 881px) and (max-width: 1169px) {
         margin-top: -65px;
-    }
-    @media only screen and (min-width: 768px) and (max-width: 880px) {
-        margin-top: -106px;
     }
 }
 .box-section {
@@ -22,7 +22,7 @@
         &::after {
             content: '';
             position: absolute;
-            background: url('../images/common/bg-title-club88.png') no-repeat;
+            background: url('../images/common/bg-title-club88.svg') no-repeat;
             width: 273px;
             height: 26px;
             left: 0;
@@ -106,7 +106,7 @@
     padding-top: 5vw;
     overflow-y: hidden;
     @include min_769 {
-        padding-top: 55px;
+        padding-top: 56px;
         padding-bottom: 242px;
     }
     .fv-slider {
@@ -115,6 +115,7 @@
         margin-left: 10px;
         margin-right: 10px;
         overflow-y: hidden;
+        max-height: 529px;
         @include min_769 {
             margin: 0;
             .arrow-slider {
@@ -284,12 +285,43 @@
         width: calc(100vw - 20px);
         height: 450px;
         margin: 10px auto 0;
-        padding: 0 50px;
+        // padding: 0 50px;
         overflow: hidden;
         @include min_769 {
             margin: 72px auto 0;
             height: 400px;
             width: 100%;
+        }
+        .prev-event,
+        .next-event {
+            font-size: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 25px;
+            height: 53px;
+            z-index: 99;
+            @include min_769 {
+                width: 30px;
+                height: 63px;
+            }
+        }
+        .prev-event {
+            left: 10px;
+            background: url('../images/top/preview-event.png') no-repeat;
+            background-size: contain;
+            @include min_769 {
+                left: 50px;
+            }
+        }
+        .next-event {
+            right: 10px;
+            background: url('../images/top/next-event.png') no-repeat;
+            background-size: contain;
+            @include min_769 {
+                right: 50px;
+            }
         }
         .evnmain-slider {
             margin: 0 auto;
@@ -467,7 +499,7 @@
                 height: 132px;
                 padding-left: 30px;
                 padding-right: 30px;
-                background: url('../images/top/bg-game_tlt.png') bottom repeat-x;
+                background: url('../images/common/bg-game_tlt.png') bottom repeat-x;
                 -webkit-transition: 0.1s ease-in-out;
                 transition: 0.1s ease-in-out;
                 .game-tlt {
@@ -487,7 +519,7 @@
                     &::before {
                         content: '';
                         position: absolute;
-                        background: url('../images/top/ic-arrow_up.png') no-repeat;
+                        background: url('../images/common/ic-arrow_up.png') no-repeat;
                         background-size: contain;
                         width: 26px;
                         height: 23px;
@@ -502,7 +534,7 @@
                     &::after {
                         content: '';
                         position: absolute;
-                        background: url('../images/top/bd-game_tlt.png') no-repeat;
+                        background: url('../images/common/bd-game_tlt.png') no-repeat;
                         width: 92px;
                         height: 11px;
                         left: 0;
@@ -534,7 +566,7 @@
                             &::after {
                                 content: '';
                                 position: absolute;
-                                background: url('../images/ic-arrow_up.png') no-repeat;
+                                background: url('../images/common/ic-arrow_up.png') no-repeat;
                                 width: 36px;
                                 height: 23px;
                                 transform: rotate(180deg);
@@ -598,6 +630,9 @@
         margin-top: 24px;
         li {
             padding: 0 5px;
+            img {
+                width: 61px;
+            }
             @include min_769 {
                 padding: 0 13px;
             }

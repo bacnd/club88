@@ -27,6 +27,9 @@
         .sns-item {
             padding-bottom: 10px;
             margin-top: -5px;
+            img {
+                width: 50px;
+            }
             @include min_769 {
                 padding-bottom: 6px;
                 margin-top: 0;
@@ -48,6 +51,11 @@
             @include min_769 {
                 max-width: 488px;
                 margin-right: 40px;
+            }
+            .ft-logo {
+                img {
+                    max-width: 199px;
+                }
             }
             #map {
                 margin-top: 9vw;

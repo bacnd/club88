@@ -31,6 +31,11 @@ body {
 
     /* Non standard for WebKit */
     word-break: break-word;
+    @include fixIE {
+        -ms-word-break: inherit;
+        word-break: inherit;
+        word-break: inherit;
+    }
     @include max_768 {
         &.show-menu {
             position: fixed;
@@ -255,6 +260,55 @@ output:-moz-ui-invalid {
                     margin-bottom: 46px;
                 }
             }
+        }
+    }
+}
+.breadcrumb {
+    margin-bottom: 20px;
+    li {
+        display: inline-block;
+        font-weight: 600;
+        font-size: 14px;
+        &.breadcrumb_last {
+            font-weight: normal;
+        }
+        a {
+            margin-right: 8px;
+            text-transform: uppercase;
+            &::after {
+                content: '/';
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.single-prev-next {
+    width: 100%;
+    margin-bottom: 40px;
+    @include max_768 {
+        margin-bottom: 6vw;
+    }
+    a {
+        border: solid 1px #a1885c;
+        text-transform: uppercase;
+        font-weight: 500;
+        padding: 10px 20px;
+        line-height: 22px;
+        margin-right: 3px;
+        margin-bottom: 3px;
+        position: relative;
+        display: inline-block;
+        &:hover {
+            background-color: #a1885c;
+            color: $clr-white;
+        }
+        @include res_320 {
+            padding: 10px;
+        }
+        &:last-child {
+            margin-right: 0;
+            float: right;
         }
     }
 }

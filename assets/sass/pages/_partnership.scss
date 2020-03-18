@@ -1,0 +1,184 @@
+#partnership {
+    @include min_769 {
+        margin-top: 35px;
+    }
+    .type__partner {
+        margin-bottom: 32px;
+        .list-partner {
+            justify-content: center;
+            @include max_768 {
+                flex-direction: column;
+                align-items: center;
+            }
+            margin-top: 6vw;
+            @include min_769 {
+                margin: 60px auto 0;
+            }
+            .item-partner {
+                position: relative;
+                max-width: 360px;
+                height: 100%;
+                overflow: hidden;
+                @include min_769 {
+                    margin-bottom: 45px;
+                    width: calc(100% / 3 - 30px);
+                    max-height: 360px;
+                }
+                figure {
+                    img {
+                        @include transition;
+                    }
+                }
+                .partner-content {
+                    position: absolute;
+                    bottom: 0;
+                    color: $clr-white;
+                    height: 132px;
+                    padding-left: 30px;
+                    padding-right: 30px;
+                    background: url('../images/common/bg-game_tlt.png') bottom repeat-x;
+                    -webkit-transition: 0.1s ease-in-out;
+                    transition: 0.1s ease-in-out;
+                    width: 100%;
+                    .partner-tlt {
+                        font-size: 27px;
+                        text-align: center;
+                        position: absolute;
+                        bottom: 19px;
+                        left: 0;
+                        right: 0;
+                        padding-top: 37px;
+                        padding-bottom: 15px;
+                        line-height: 1.1;
+                        @include resizefont(24px, 48px);
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            background: url('../images/common/ic-arrow_up.png') no-repeat;
+                            background-size: contain;
+                            width: 26px;
+                            height: 23px;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                            top: 0;
+                            @include min_769 {
+                                width: 36px;
+                            }
+                        }
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            background: url('../images/common/bd-game_tlt.png') no-repeat;
+                            width: 92px;
+                            height: 11px;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                            bottom: 0;
+                        }
+                    }
+                    .partner-info {
+                        font-size: 16px;
+                        opacity: 0;
+                        @include resizefont(16px, 32px);
+                        @include min_769 {
+                            line-height: 2;
+                        }
+                        .partner-add {
+                        }
+                        .partner-phone {
+                            a {
+                                color: $clr-white;
+                            }
+                        }
+                    }
+                }
+                & + .item-partner {
+                    @include max_768 {
+                        margin-top: 20px;
+                    }
+                    @media screen and (max-width: 375px) {
+                        margin-top: 10px;
+                    }
+                    @include min_769 {
+                        margin-left: 45px;
+                    }
+                }
+                &:nth-child(3n + 1) {
+                    margin-left: 0;
+                }
+                &:hover {
+                    // @include min_769 {
+                    figure {
+                        img {
+                            -webkit-transform: scale(1.05);
+                            transform: scale(1.05);
+                        }
+                    }
+                    .partner-content {
+                        background: rgba(#28246a, 0.85);
+                        height: 100%;
+                        top: 0;
+                        -webkit-transition: 0.5s ease-in-out;
+                        transition: 0.5s ease-in-out;
+
+                        padding: 1px 30px;
+                        .partner-tlt {
+                            position: relative;
+                            bottom: 0;
+                            padding-top: 30px;
+                            padding-bottom: 32px;
+                            -webkit-transition: 0.5s ease-in-out;
+                            transition: 0.5s ease-in-out;
+                            &::before {
+                                content: none;
+                            }
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                background: url('../images/common/ic-arrow_up.png') no-repeat;
+                                width: 36px;
+                                height: 23px;
+                                transform: rotate(180deg);
+                            }
+                        }
+                        .partner-info {
+                            opacity: 1;
+                            margin-top: 15px;
+                            transition-delay: 0.2s;
+                            .partner-phone {
+                                a {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                    // }
+                    @media screen and (min-width: 769px) and (max-width: 1023px) {
+                        .partner-content {
+                            .partner-tlt {
+                                padding-top: 10px;
+                            }
+                            .partner-info {
+                                line-height: inherit;
+                            }
+                        }
+                    }
+                }
+            }
+            &::after {
+                content: '';
+                clear: both;
+                display: table;
+            }
+            &.jc-flstart {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                .item-partner {
+                    position: relative;
+                }
+            }
+        }
+    }
+}

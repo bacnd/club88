@@ -19,10 +19,18 @@ function setHeaderClass() {
 
     currentPath = location.pathname.split('/')[1];
     console.log(currentPath);
-    $('#' + currentPath)
-        .parents('li')
-        .addClass('current');
-    $('#' + currentPath).addClass('current');
+    $('.nav-menu li').each(function() {
+        var linkmenu = $(this)
+            .find('a')
+            .attr('href');
+        if (linkmenu === currentPath) {
+            $(this).addClass('current-menu-item');
+            return false;
+        }
+        if (currentPath === '') {
+            $('.nav-menu li:eq(0)').addClass('current-menu-item');
+        }
+    });
 }
 
 function loadFooter() {
